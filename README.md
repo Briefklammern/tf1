@@ -81,8 +81,31 @@ auto-approve автоматически подтверждает все прав
 ![HW](./img/5.PNG)
 
 8. Уничтожьте созданные ресурсы с помощью **terraform**. Убедитесь, что все ресурсы удалены. Приложите содержимое файла **terraform.tfstate**. 
+
+![destroy](./img/6.PNG)
+```
+{
+  "version": 4,
+  "terraform_version": "1.15.7",
+  "serial": 11,
+  "lineage": "9047f83d-bbf9-26d3-eb59-03c32364b45e",
+  "outputs": {},
+  "resources": [],
+  "check_results": null
+}
+```
+
 9. Объясните, почему при этом не был удалён docker-образ **nginx:latest**. Ответ **ОБЯЗАТЕЛЬНО НАЙДИТЕ В ПРЕДОСТАВЛЕННОМ КОДЕ**, а затем **ОБЯЗАТЕЛЬНО ПОДКРЕПИТЕ** строчкой из документации [**terraform провайдера docker**](https://library.tf/providers/kreuzwerker/docker/latest).  (ищите в классификаторе resource docker_image )
 
+```
+Образ не был удален, т.к. в файле main.tf мы прописали, что хотим его сохранять.
+resource "docker_image" "nginx" {
+  name         = "nginx:latest"
+  **keep_locally = true**
+}
+
+```
+![doc](./img/7.PNG)
 
 ------
 
