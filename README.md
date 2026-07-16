@@ -54,6 +54,14 @@ D:\netology\tf1>terraform.exe validate
 │
 │ A name must start with a letter or underscore and may contain only letters, digits, underscores, and dashes.
 |    === Начало имени должно начинаться с буквы или нижнего подчеркивания.
+|
+│ Error: Reference to undeclared resource
+│
+│   on main.tf line 28, in resource "docker_container" "nginx":
+│   28:   name  = "example_${random_password.random_string_FAKE.resulT}"
+│
+│ A managed resource "random_password" "random_string_FAKE" has not been declared in the root module.
+|    === Ресурс "random_password" "random_string_FAKE" не описан в корневом модуле, необходимо сверить имена со строкой 13.
 ```
 5. Выполните код. В качестве ответа приложите: исправленный фрагмент кода и вывод команды ```docker ps```.
 6. Замените имя docker-контейнера в блоке кода на ```hello_world```. Не перепутайте имя контейнера и имя образа. Мы всё ещё продолжаем использовать name = "nginx:latest". Выполните команду ```terraform apply -auto-approve```.
