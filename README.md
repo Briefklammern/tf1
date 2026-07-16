@@ -1,4 +1,4 @@
-<img width="1176" height="1040" alt="image" src="https://github.com/user-attachments/assets/f0cc3a63-2182-4b12-a4f0-6469db2c649d" /># Домашнее задание к занятию «Введение в Terraform» Сафронов П.А.
+# Домашнее задание к занятию «Введение в Terraform» Сафронов П.А.
 
 ### Цели задания
 
