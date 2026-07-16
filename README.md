@@ -45,7 +45,7 @@ D:\netology\tf1>terraform.exe validate
 │   21: resource "docker_image" {
 │
 │ All resource blocks must have 2 labels (type, name).
-| Для ресурса указан 1 лейбл, а должно быть обязательно два
+|    === Для ресурса указан 1 лейбл, а должно быть обязательно два
 |
 │ Error: Invalid resource name
 │
@@ -53,7 +53,7 @@ D:\netology\tf1>terraform.exe validate
 │   26: resource "docker_container" "1nginx" {
 │
 │ A name must start with a letter or underscore and may contain only letters, digits, underscores, and dashes.
-| Начало имени должно начинаться с буквы или нижнего подчеркивания.
+|    === Начало имени должно начинаться с буквы или нижнего подчеркивания.
 ```
 5. Выполните код. В качестве ответа приложите: исправленный фрагмент кода и вывод команды ```docker ps```.
 6. Замените имя docker-контейнера в блоке кода на ```hello_world```. Не перепутайте имя контейнера и имя образа. Мы всё ещё продолжаем использовать name = "nginx:latest". Выполните команду ```terraform apply -auto-approve```.
