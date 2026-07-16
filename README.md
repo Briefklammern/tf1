@@ -98,10 +98,11 @@ auto-approve автоматически подтверждает все прав
 9. Объясните, почему при этом не был удалён docker-образ **nginx:latest**. Ответ **ОБЯЗАТЕЛЬНО НАЙДИТЕ В ПРЕДОСТАВЛЕННОМ КОДЕ**, а затем **ОБЯЗАТЕЛЬНО ПОДКРЕПИТЕ** строчкой из документации [**terraform провайдера docker**](https://library.tf/providers/kreuzwerker/docker/latest).  (ищите в классификаторе resource docker_image )
 
 ```
-Образ не был удален, т.к. в файле main.tf мы прописали, что хотим его сохранять.
+Образ не был удален, т.к. в файле main.tf мы прописали, что хотим его сохранять:
+
 resource "docker_image" "nginx" {
   name         = "nginx:latest"
-  **keep_locally = true**
+  keep_locally = true
 }
 
 ```
