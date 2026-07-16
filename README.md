@@ -27,9 +27,34 @@
 
 1. Перейдите в каталог [**src**](https://github.com/netology-code/ter-homeworks/tree/main/01/src). Скачайте все необходимые зависимости, использованные в проекте. 
 2. Изучите файл **.gitignore**. В каком terraform-файле, согласно этому .gitignore, допустимо сохранить личную, секретную информацию?(логины,пароли,ключи,токены итд)
+```
+personal.auto.tfvars
+```
 3. Выполните код проекта. Найдите  в state-файле секретное содержимое созданного ресурса **random_password**, пришлите в качестве ответа конкретный ключ и его значение.
+```
+"result": "1CgEweHajw678Cv6"
+```
 4. Раскомментируйте блок кода, примерно расположенный на строчках 29–42 файла **main.tf**.
 Выполните команду ```terraform validate```. Объясните, в чём заключаются намеренно допущенные ошибки. Исправьте их.
+```
+D:\netology\tf1>terraform.exe validate
+╷
+│ Error: Missing name for resource
+│
+│   on main.tf line 21, in resource "docker_image":
+│   21: resource "docker_image" {
+│
+│ All resource blocks must have 2 labels (type, name).
+| Для ресурса указан 1 лейбл, а должно быть обязательно два
+|
+│ Error: Invalid resource name
+│
+│   on main.tf line 26, in resource "docker_container" "1nginx":
+│   26: resource "docker_container" "1nginx" {
+│
+│ A name must start with a letter or underscore and may contain only letters, digits, underscores, and dashes.
+| Начало имени должно начинаться с буквы или нижнего подчеркивания.
+```
 5. Выполните код. В качестве ответа приложите: исправленный фрагмент кода и вывод команды ```docker ps```.
 6. Замените имя docker-контейнера в блоке кода на ```hello_world```. Не перепутайте имя контейнера и имя образа. Мы всё ещё продолжаем использовать name = "nginx:latest". Выполните команду ```terraform apply -auto-approve```.
 Объясните своими словами, в чём может быть опасность применения ключа  ```-auto-approve```. Догадайтесь или нагуглите зачем может пригодиться данный ключ? В качестве ответа дополнительно приложите вывод команды ```docker ps```.
