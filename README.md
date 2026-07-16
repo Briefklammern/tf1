@@ -62,6 +62,7 @@ D:\netology\tf1>terraform.exe validate
 │
 │ A managed resource "random_password" "random_string_FAKE" has not been declared in the root module.
 |    === Ресурс "random_password" "random_string_FAKE" не описан в корневом модуле, необходимо сверить имена со строкой 13.
+|        файла main.tf
 ```
 5. Выполните код. В качестве ответа приложите: исправленный фрагмент кода и вывод команды ```docker ps```.
 6. Замените имя docker-контейнера в блоке кода на ```hello_world```. Не перепутайте имя контейнера и имя образа. Мы всё ещё продолжаем использовать name = "nginx:latest". Выполните команду ```terraform apply -auto-approve```.
